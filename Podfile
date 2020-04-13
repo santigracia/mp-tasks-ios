@@ -8,5 +8,6 @@ target 'MPTasks' do
   # Pods for MPTasks
 pod 'Alamofire', '~> 5.0'
 pod 'NVActivityIndicatorView'
+pod 'SwipeCellKit'
 
 end

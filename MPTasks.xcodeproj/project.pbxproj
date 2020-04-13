@@ -15,6 +15,8 @@
 		64F6B6EC242A58DC009C78E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F6B6EA242A58DC009C78E3 /* LaunchScreen.storyboard */; };
 		64F6B6F624399AA5009C78E3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F6B6F524399AA5009C78E3 /* Data.swift */; };
 		64F6B6F8243ABFBE009C78E3 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F6B6F7243ABFBE009C78E3 /* TaskViewController.swift */; };
+		64F6B6FB24411FBF009C78E3 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F6B6FA24411FBF009C78E3 /* Task.swift */; };
+		64F6B6FD24412003009C78E3 /* taskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F6B6FC24412003009C78E3 /* taskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		64F6B6ED242A58DC009C78E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64F6B6F524399AA5009C78E3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		64F6B6F7243ABFBE009C78E3 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		64F6B6FA24411FBF009C78E3 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		64F6B6FC24412003009C78E3 /* taskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskCell.swift; sourceTree = "<group>"; };
 		9C5254E67FC86EA2E07A9D10 /* Pods_MPTasks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPTasks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9103858E2ADF4EC6E3ACA49 /* Pods-MPTasks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPTasks.release.xcconfig"; path = "Target Support Files/Pods-MPTasks/Pods-MPTasks.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,16 +69,50 @@
 		64F6B6DE242A58DA009C78E3 /* MPTasks */ = {
 			isa = PBXGroup;
 			children = (
-				64F6B6F524399AA5009C78E3 /* Data.swift */,
-				64F6B6DF242A58DA009C78E3 /* AppDelegate.swift */,
-				64F6B6E3242A58DA009C78E3 /* LoginViewController.swift */,
 				64F6B6E5242A58DA009C78E3 /* Main.storyboard */,
-				64F6B6F7243ABFBE009C78E3 /* TaskViewController.swift */,
-				64F6B6E8242A58DC009C78E3 /* Assets.xcassets */,
 				64F6B6EA242A58DC009C78E3 /* LaunchScreen.storyboard */,
+				64F6B6DF242A58DA009C78E3 /* AppDelegate.swift */,
+				64F6B6FF24444069009C78E3 /* ViewControllers */,
+				64F6B701244440B4009C78E3 /* Network */,
+				64F6B700244440A8009C78E3 /* Views */,
+				64F6B6F924411FB3009C78E3 /* Model */,
+				64F6B6E8242A58DC009C78E3 /* Assets.xcassets */,
 				64F6B6ED242A58DC009C78E3 /* Info.plist */,
 			);
 			path = MPTasks;
+			sourceTree = "<group>";
+		};
+		64F6B6F924411FB3009C78E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64F6B6FA24411FBF009C78E3 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64F6B6FF24444069009C78E3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				64F6B6E3242A58DA009C78E3 /* LoginViewController.swift */,
+				64F6B6F7243ABFBE009C78E3 /* TaskViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		64F6B700244440A8009C78E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64F6B6FC24412003009C78E3 /* taskCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64F6B701244440B4009C78E3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				64F6B6F524399AA5009C78E3 /* Data.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D792D38176B054CFB8EA6885 /* Pods */ = {
@@ -209,8 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64F6B6FD24412003009C78E3 /* taskCell.swift in Sources */,
 				64F6B6E4242A58DA009C78E3 /* LoginViewController.swift in Sources */,
 				64F6B6F8243ABFBE009C78E3 /* TaskViewController.swift in Sources */,
+				64F6B6FB24411FBF009C78E3 /* Task.swift in Sources */,
 				64F6B6F624399AA5009C78E3 /* Data.swift in Sources */,
 				64F6B6E0242A58DA009C78E3 /* AppDelegate.swift in Sources */,
 			);
@@ -363,7 +403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mixpanel.mptask.MPTasks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mixpanel.MPTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -381,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mixpanel.mptask.MPTasks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mixpanel.MPTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

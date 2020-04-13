@@ -12,6 +12,7 @@ import NVActivityIndicatorView //loading screen - activity indicator
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var backLogin: UIView!
     @IBOutlet weak var email: UITextField!
     
     var activityIndicatorView : NVActivityIndicatorView!
@@ -22,7 +23,7 @@ class LoginViewController: UIViewController {
             makeAuth(inputEmail: emailText)
         }
         else {
-            Helper.showToast(controller: self, message: "Try with your @mixpanel.com account", seconds: 1.5)
+            Helper.showToast(controller: self, message: "Try with your @mixpanel.com account", seconds: 1.5, completion: { (r) in })
         }
     }
     
@@ -31,12 +32,16 @@ class LoginViewController: UIViewController {
         makeAuth(inputEmail: "demo@mixpanel.com")
     }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        email.text = ""
+    }
     
     // this executs when the screen loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupHideKeyboardOnTap()
+        backLogin.layer.cornerRadius = 20
+
         // Do any additional setup after loading the view.
         activityIndicatorView = NVActivityIndicatorView(frame: self.view.frame, type: .ballPulse, color: UIColor(cgColor: CGColor(srgbRed: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)), padding: 150)
     }
@@ -63,12 +68,15 @@ extension LoginViewController {
             self.view.alpha = 1.0
 
             if complete {
-                // go to next screen
-                Helper.showToast(controller: self, message: theMessage, seconds: 1.0)
-                
+                    Helper.showToast(controller: self, message: theMessage, seconds: 1.0, completion: { (result) in
+                        
+                        let taskVC = self.storyboard?.instantiateViewController(withIdentifier: "TaskViewController") as! TaskViewController
+                        self.navigationController?.pushViewController(taskVC, animated: true)
+                    })
+
             }
             else {
-                Helper.showToast(controller: self, message: theMessage, seconds: 2.0)
+                Helper.showToast(controller: self, message: theMessage, seconds: 1.7, completion: { (r) in })
             }
         }
         print("OK")

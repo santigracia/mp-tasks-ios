@@ -3,20 +3,24 @@ PODS:
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
   - NVActivityIndicatorView
+  - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - NVActivityIndicatorView
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 8ca6815e64208cd52db0dbfa210d975fb4891d82
+PODFILE CHECKSUM: a352c102660e4aad40e79e728a0ec07446e91be1
 
 COCOAPODS: 1.7.5
